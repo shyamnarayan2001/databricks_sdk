@@ -1,0 +1,48 @@
+{
+    "instance_pool_id": {
+      "type": "forbidden",
+      "hidden": true
+    },
+    "spark_version": {
+      "type": "unlimited",
+      "defaultValue": "auto:latest-ml"
+    },
+    "node_type_id": {
+      "type": "allowlist",
+      "values": [
+        "i3.xlarge",
+        "i3.2xlarge",
+        "i3.4xlarge"
+      ],
+      "defaultValue": "i3.2xlarge"
+    },
+    "driver_node_type_id": {
+      "type": "fixed",
+      "value": "i3.2xlarge",
+      "hidden": true
+    },
+    "autoscale.min_workers": {
+      "type": "fixed",
+      "value": 1,
+      "hidden": true
+    },
+    "autoscale.max_workers": {
+      "type": "range",
+      "maxValue": 25,
+      "defaultValue": 5
+    },
+    "enable_elastic_disk": {
+      "type": "fixed",
+      "value": true,
+      "hidden": true
+    },
+    "autotermination_minutes": {
+      "type": "fixed",
+      "value": 30,
+      "hidden": true
+    },
+    "custom_tags.team": {
+      "type": "fixed",
+      "value": "product"
+    }
+  }

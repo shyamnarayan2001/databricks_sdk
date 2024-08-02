@@ -1,0 +1,6 @@
+{
+    "custom_tags.test_tag": {
+      "type": "fixed",
+      "value": "test_value"
+    }
+  }

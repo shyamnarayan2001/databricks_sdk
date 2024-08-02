@@ -1,0 +1,36 @@
+{
+  "cluster_name": "multi-node-cluster",
+  "autotermination_minutes": 15,
+  "num_workers": 1,
+  "spark_version": "14.3.x-scala2.12",
+  "policy_id": "1",
+  "runtime_engine": "STANDARD",
+  "data_security_mode": "SINGLE_USER",
+  "node_type_id": "i3.xlarge",
+  "driver_node_type_id": "i3.xlarge",
+  "autoscale": {
+    "min_workers": 2,
+    "max_workers": 50
+  },
+  "spark_conf": {
+    "spark.databricks.cluster.profile": "singleNode",
+    "spark.master": "[*, 4]"
+  },
+  "spark_env_vars": {
+    "PYSPARK_PYTHON": "/databricks/python3/bin/python3"
+  },
+  "enable_elastic_disk": false,
+  "custom_tags": {
+    "team": "DataScience",
+    "billable-region": "us-west-2",
+    "function": "Analysis",
+    "product": "Databricks"
+  },
+  "aws_attributes": {
+    "first_on_demand": 1,
+    "availability": "SPOT_WITH_FALLBACK",
+    "zone_id": "auto",
+    "spot_bid_price_percent": 100,
+    "ebs_volume_count": 0
+  }
+}
