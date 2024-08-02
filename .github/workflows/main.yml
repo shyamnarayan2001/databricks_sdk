@@ -27,11 +27,12 @@ jobs:
           source .venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          
+
       - name: Run cluster creation script
         env:
           DATABRICKS_HOST_WORKSPACE_DS: ${{ secrets.DATABRICKS_HOST_WORKSPACE_DS }}
           DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_CLIENT_ID }}
           DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
         run: |
+          source .venv/bin/activate
           python main.py ds
